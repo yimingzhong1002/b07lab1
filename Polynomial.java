@@ -8,8 +8,8 @@ public class Polynomial{
 
     public Polynomial(double[] arr){
         coefficients = new double[arr.length];
-        for(int i=0; i<arr.length; i++){
-            coefficients[i]=arr[i];
+        for(int i = 0; i < arr.length; i++){
+            coefficients[i] = arr[i];
         }
     }
 
@@ -18,8 +18,8 @@ public class Polynomial{
         int min_len = Math.min(this.coefficients.length, function.coefficients.length);
         Polynomial result = new Polynomial(new double[max_len]);
         
-        for(int i=0;i<max_len;i++){
-            if(i<min_len){
+        for(int i = 0;i < max_len; i++){
+            if(i < min_len){
                 result.coefficients[i] = this.coefficients[i] + function.coefficients[i];
             }
             else
@@ -33,7 +33,7 @@ public class Polynomial{
 
     public double evaluate(double x) {
         double sum = 0;
-        for (int i = 0; i < coefficients.length; i++) {
+        for (int i = 0; i < this.coefficients.length; i++) {
             sum += coefficients[i] * Math.pow(x, i);
         }
         return sum;
